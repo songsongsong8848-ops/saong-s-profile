@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Noto+Serif+SC:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="assets/image-slot.js"></script>
+<style>
+  .asong-nav-item{cursor:pointer;transition:color .16s,background .16s}
+  .asong-nav-item:hover{color:#7e56b4 !important}
+  .asong-nav-item:hover .asong-nav-cn{color:#7e56b4 !important}
+  .asong-vol{cursor:pointer;transition:transform .2s,box-shadow .2s}
+  .asong-vol:hover{transform:translateY(-4px)}
+  .asong-vol:hover .asong-vol-label{color:#5a2e93 !important}
+  .asong-idx{cursor:pointer;transition:color .16s}
+  .asong-idx:hover{color:#7e56b4 !important}
+  @media (max-width:760px){
+    .asong-main{grid-template-columns:1fr !important}
+    .asong-vol-inner{flex-direction:column !important;text-align:left !important}
+    .asong-vol-inner.rev{flex-direction:column !important}
+    .asong-topnav{flex-wrap:wrap !important;gap:12px 18px !important}
+    .asong-idxrow{flex-wrap:wrap !important}
+  }
+</style>
+</helmet>
+
+<div style="background:#efe9d8;font-family:'Noto Serif SC',serif;color:#2c2730;padding-bottom:0">
+
+  
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(18px,3vw,34px) clamp(16px,4vw,56px) 0">
+
+    <div class="asong-topnav" style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding-bottom:14px;border-bottom:1px solid #2c2730">
+      <div onClick="{{ onTop }}" class="asong-nav-item" style="flex-shrink:0">
+        <div style="font-family:'Special Elite',monospace;font-size:clamp(15px,2vw,20px);letter-spacing:.06em">ASONG</div>
+        <div style="font-size:clamp(11px,1.4vw,13px);letter-spacing:.3em;color:#6f6678">宋昕雨</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:clamp(12px,2.2vw,30px);flex-wrap:wrap;justify-content:flex-end">
+        <div onClick="{{ onTop }}" class="asong-nav-item" style="text-align:center;color:#7e56b4">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">FRONT PAGE</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em;color:#7e56b4">基本信息</div>
+        </div>
+        <div onClick="{{ onWork }}" class="asong-nav-item" style="text-align:center">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">CAREER LEDGER</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em">职场履历</div>
+        </div>
+        <div onClick="{{ onIntern }}" class="asong-nav-item" style="text-align:center">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">INTERNSHIPS</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em">实习经历</div>
+        </div>
+        <div onClick="{{ onCampus }}" class="asong-nav-item" style="text-align:center">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">CAMPUS</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em">校园经历</div>
+        </div>
+        <div onClick="{{ onProject }}" class="asong-nav-item" style="text-align:center">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">PROJECT ARCHIVE</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em">项目展示</div>
+        </div>
+        <div onClick="{{ onExplore }}" class="asong-nav-item" style="text-align:center">
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.1vw,12px);letter-spacing:.12em">EXPLORATION</div>
+          <div class="asong-nav-cn" style="font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em">支线探索</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:3px double #2c2730;border-bottom:3px double #2c2730;margin-top:6px;padding:clamp(10px,2vw,20px) 0;container-type:inline-size">
+      <div style="font-family:'Special Elite',monospace;font-size:min(9.3cqw,112px);line-height:.96;text-align:center;letter-spacing:.01em;white-space:nowrap;width:100%">ASONG's PROFILE</div></div>
+
+    <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(14px,4vw,52px);padding:clamp(14px,2.4vw,26px) 0;font-style:italic;font-size:clamp(13px,1.5vw,18px);color:#3b3640">
+      <span style="display:inline-flex;align-items:center;gap:10px"><span style="color:#9a8cb4">▌</span>关于我是谁？</span>
+      <span style="display:inline-flex;align-items:center;gap:10px"><span style="color:#9a8cb4">▌</span>我为职业发展做过哪些努力？</span>
+      <span style="display:inline-flex;align-items:center;gap:10px"><span style="color:#9a8cb4">▌</span>有什么我能为你做到的？</span>
+    </div>
+
+    <div class="asong-idxrow" style="display:flex;border-top:1px solid #2c2730;border-bottom:1px solid #2c2730;margin-bottom:clamp(24px,4vw,48px)">
+      <div onClick="{{ onTop }}" class="asong-idx" style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #c3b9cf;color:#6f6678">
+        <div style="font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.1em">FRONT PAGE</div>
+        <div style="font-size:12px;letter-spacing:.16em">基本信息</div>
+      </div>
+      <div onClick="{{ onCampus }}" class="asong-idx" style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #c3b9cf;color:#6f6678">
+        <div style="font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.1em">CAMPUS</div>
+        <div style="font-size:12px;letter-spacing:.16em">校园经历</div>
+      </div>
+      <div onClick="{{ onProject }}" class="asong-idx" style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #c3b9cf;color:#6f6678">
+        <div style="font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.1em">PROJECT ARCHIVE</div>
+        <div style="font-size:12px;letter-spacing:.16em">项目展示</div>
+      </div>
+      <div onClick="{{ onWork }}" class="asong-idx" style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #c3b9cf;color:#6f6678">
+        <div style="font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.1em">CAREER LEDGER</div>
+        <div style="font-size:12px;letter-spacing:.16em">职场经历</div>
+      </div>
+      <div onClick="{{ onExplore }}" class="asong-idx" style="flex:1;text-align:center;padding:10px 6px;color:#6f6678">
+        <div style="font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.1em">EXPLORATION</div>
+        <div style="font-size:12px;letter-spacing:.16em">支线探索</div>
+      </div>
+    </div>
+
+    <div class="asong-main" style="display:grid;grid-template-columns:minmax(200px,0.85fr) minmax(300px,1.5fr) minmax(240px,1.15fr);gap:clamp(22px,3vw,44px);padding-bottom:clamp(40px,6vw,80px)">
+
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        
+        <div style="position:relative;width:100%;max-width:210px;aspect-ratio:5/7">
+          <image-slot id="asong-portrait" src="assets/img/r12.png" style="position:absolute;inset:0;width:100%;height:100%" shape="rounded" radius="4" placeholder="拖入个人照片"></image-slot>
+        </div><div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px">
+            <span style="font-weight:700;font-size:clamp(15px,1.7vw,18px);color:#7e56b4">联系方式</span>
+            <span style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.12em;color:#7e56b4">/ CONTACT</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <span style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid #7e56b4;display:inline-flex;align-items:center;justify-content:center;color:#7e56b4;font-size:13px">☎</span>
+            <div><div style="font-size:11px;color:#7e56b4;letter-spacing:.08em">电话 / Phone</div><div style="font-size:clamp(13px,1.5vw,15px);letter-spacing:.02em">183-9826-2167</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid #7e56b4;display:inline-flex;align-items:center;justify-content:center;color:#7e56b4;font-size:12px">✉</span>
+            <div><div style="font-size:11px;color:#7e56b4;letter-spacing:.08em">邮箱 / Email</div><div style="font-size:clamp(12px,1.4vw,14px)">songsongsong8848@gmail.com</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:.04em;padding-bottom:12px;border-bottom:1.5px solid #9a8cb4;margin-bottom:22px">宋昕雨·<span style="font-family:'Special Elite',monospace;font-weight:400">SONG XINYU</span></div>
+
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px">
+          <span style="font-weight:700;font-size:clamp(15px,1.7vw,19px);color:#7e56b4">教育背景</span>
+          <span style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.12em;color:#7e56b4">/ EDUCATION</span>
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="font-size:clamp(16px,1.9vw,21px);font-weight:600">四川农业大学（211院校）</div>
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(11px,1.3vw,13px);color:#6f6678;letter-spacing:.02em">Sichuan Agricultural University (Project 211 University)</div>
+        </div>
+        <div style="margin-bottom:26px">
+          <div style="font-size:clamp(16px,1.9vw,21px);font-weight:600">本科·广告学·2020届</div>
+          <div style="font-family:'Special Elite',monospace;font-size:clamp(11px,1.3vw,13px);color:#6f6678;letter-spacing:.02em">Bachelor's Degree in Advertising (Class of 2020)</div>
+        </div>
+
+        <div style="border:1px solid #b7adc4;padding:clamp(16px,2vw,24px)">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:16px">
+            <span style="font-weight:700;font-size:clamp(15px,1.7vw,18px);color:#7e56b4">专业课程</span>
+            <span style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.12em;color:#7e56b4">/ COURSEWORK</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ courses }}" as="c" hint-placeholder-count="7">
+              <div style="display:flex;align-items:baseline;gap:14px;font-size:clamp(13px,1.5vw,15px)">
+                <span style="flex:0 0 42%;display:inline-flex;align-items:baseline;gap:8px"><span style="color:#7e56b4;font-size:9px;transform:translateY(-2px)">●</span>{{ c.cn }}</span>
+                <span style="font-family:'Special Elite',monospace;font-size:clamp(11px,1.3vw,13px);color:#564f5e;letter-spacing:.01em">{{ c.en }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:#2c2730;color:#efe9d8;padding:clamp(18px,2.2vw,28px)">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:20px">
+            <span style="font-weight:700;font-size:clamp(15px,1.7vw,19px);color:#b79bdd">核心能力</span>
+            <span style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.1em;color:#9a8cb4">/ CORE COMPETENCIES</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-for list="{{ skills }}" as="s" hint-placeholder-count="6">
+              <div>
+                <div style="font-size:clamp(14px,1.6vw,17px);font-weight:500;letter-spacing:.02em">{{ s.cn }}</div>
+                <div style="font-family:'Special Elite',monospace;font-size:clamp(10px,1.2vw,12px);color:#8e84a0;letter-spacing:.02em">{{ s.en }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="border:1px solid #b7adc4;border-top:none;padding:clamp(16px,2vw,24px)">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:16px">
+            <span style="font-weight:700;font-size:clamp(15px,1.7vw,18px);color:#7e56b4">工具</span>
+            <span style="font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.12em;color:#7e56b4">/ TOOLS</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            <sc-for list="{{ tools }}" as="t" hint-placeholder-count="4">
+              <div style="text-align:center">
+                <div style="aspect-ratio:1/1;background:#c7bdda;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Special Elite',monospace;font-size:clamp(14px,1.8vw,20px);color:#3a2f52;font-weight:700">{{ t.abbr }}</div>
+                <div style="font-family:'Special Elite',monospace;font-size:clamp(8px,1vw,10px);color:#6f6678;margin-top:6px;letter-spacing:.01em">{{ t.name }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><div style="background:#b3a8c4;padding:clamp(30px,5vw,64px) 0 clamp(40px,6vw,80px)">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,56px);display:flex;flex-direction:column;gap:clamp(26px,4vw,48px)">
+
+      <div onClick="{{ onWork }}" class="asong-vol">
+        <div style="display:inline-block;background:#9d90b7;color:#fff;padding:9px 26px 9px 20px;border-radius:10px 22px 0 0;font-size:clamp(15px,2vw,21px);font-weight:600;letter-spacing:.04em" class="asong-vol-label">Vol.Ⅰ：职场履历</div>
+        <div class="asong-vol-inner" style="background:#9d90b7;border-radius:0 16px 16px 16px;padding:clamp(18px,2.4vw,30px);display:flex;align-items:center;gap:clamp(18px,3vw,40px)">
+          <div style="flex:1;min-width:0;color:#2a2333;font-style:italic;font-size:clamp(14px,1.7vw,19px);line-height:1.9">以品牌内容、社媒运营、媒介投放与营销赋能，构建可持续的市场传播体系。</div>
+          <image-slot id="asong-vol1" src="assets/img/slot-asong-vol1.webp" style="flex:0 0 clamp(200px,30vw,330px);height:auto;aspect-ratio:16/11;display:block;transform:rotate(-1.5deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="拖入作品图"></image-slot>
+        </div>
+      </div>
+
+      <div onClick="{{ onIntern }}" class="asong-vol" style="align-self:flex-end;text-align:right;max-width:92%">
+        <div style="display:inline-block;background:#8d80a9;color:#fff;padding:9px 20px 9px 26px;border-radius:22px 10px 0 0;font-size:clamp(15px,2vw,21px);font-weight:600;letter-spacing:.04em" class="asong-vol-label">Vol.Ⅱ：实习&amp;校园经历</div>
+        <div class="asong-vol-inner rev" style="background:#8d80a9;border-radius:16px 0 16px 16px;padding:clamp(18px,2.4vw,30px);display:flex;align-items:center;gap:clamp(18px,3vw,40px);flex-direction:row-reverse;text-align:right">
+          <div style="flex:1;min-width:0;color:#241e30;font-style:italic;font-size:clamp(14px,1.7vw,19px);line-height:1.9">传媒实习 + 高校媒体创作 + 广告策划实践。</div>
+          <div style="flex:0 0 clamp(220px,36vw,380px);display:flex;gap:12px">
+            <image-slot id="asong-vol2a" src="assets/img/slot-asong-vol2a.webp" style="flex:1;height:auto;aspect-ratio:4/3;display:block;transform:rotate(2deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="作品"></image-slot>
+            <image-slot id="asong-vol2b" src="assets/img/slot-asong-vol2b.webp" style="flex:1;height:auto;aspect-ratio:4/3;display:block;transform:rotate(-2deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="作品"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <div onClick="{{ onProject }}" class="asong-vol">
+        <div style="display:inline-block;background:#9d90b7;color:#fff;padding:9px 26px 9px 20px;border-radius:10px 22px 0 0;font-size:clamp(15px,2vw,21px);font-weight:600;letter-spacing:.04em" class="asong-vol-label">Vol.Ⅲ：项目展示</div>
+        <div class="asong-vol-inner" style="background:#9d90b7;border-radius:0 16px 16px 16px;padding:clamp(18px,2.4vw,30px);display:flex;align-items:center;gap:clamp(18px,3vw,40px)">
+          <div style="flex:1;min-width:0;color:#2a2333;font-style:italic;font-size:clamp(14px,1.7vw,19px);line-height:1.9">品牌内容、社媒运营、媒介投放与营销赋能，构建可持续的市场传播体系。</div>
+          <div style="flex:0 0 auto;min-width:0;display:flex;gap:10px;align-items:center;height:clamp(140px,18vw,200px)">
+            <image-slot id="asong-vol3a" style="height:100%;width:auto;aspect-ratio:4/3;display:block;transform:rotate(2deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="作品"></image-slot>
+            <image-slot id="asong-vol3b" style="height:100%;width:auto;aspect-ratio:9/16;display:block;transform:rotate(-2deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="竖图"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <div onClick="{{ onExplore }}" class="asong-vol" style="align-self:flex-end;text-align:right;max-width:92%">
+        <div style="display:inline-block;background:#8d80a9;color:#fff;padding:9px 20px 9px 26px;border-radius:22px 10px 0 0;font-size:clamp(15px,2vw,21px);font-weight:600;letter-spacing:.04em" class="asong-vol-label">Vol.Ⅳ：支线探索</div>
+        <div class="asong-vol-inner rev" style="background:#8d80a9;border-radius:16px 0 16px 16px;padding:clamp(18px,2.4vw,30px);display:flex;align-items:center;gap:clamp(18px,3vw,40px);flex-direction:row-reverse;text-align:right">
+          <div style="flex:1;min-width:0;color:#241e30;font-style:italic;font-size:clamp(14px,1.7vw,19px);line-height:1.9">无论在哪里工作，我认为观察和思考是一切的基础。</div>
+          <image-slot id="asong-vol4" style="flex:0 0 clamp(220px,34vw,350px);height:auto;aspect-ratio:3/2;display:block;transform:rotate(2deg);box-shadow:0 8px 22px rgba(40,33,52,.22)" shape="rounded" radius="3" placeholder="拖入图片"></image-slot>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;onTop&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onWork&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onIntern&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onProject&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;},&quot;onExplore&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      onTop: this.props.onTop || (() => {}),
+      onWork: this.props.onWork || (() => {}),
+      onIntern: this.props.onIntern || (() => {}),
+      onCampus: this.props.onCampus || this.props.onIntern || (() => {}),
+      onProject: this.props.onProject || (() => {}),
+      onExplore: this.props.onExplore || (() => {}),
+      courses: [
+        { cn: '传播学', en: 'Communication Studies' },
+        { cn: '消费心理学', en: 'Consumer Psychology' },
+        { cn: '广告策划', en: 'Advertising Planning' },
+        { cn: '市场调查与预测', en: 'Market Research & Forecasting' },
+        { cn: '广告效果研究', en: 'Advertising Effectiveness Research' },
+        { cn: '平面广告设计', en: 'Graphic Design' },
+        { cn: '广告文案写作', en: 'Copywriting' },
+      ],
+      skills: [
+        { cn: '社媒运营与内容策划', en: 'Social Media Operations & Content' },
+        { cn: '品牌传播与公共关系', en: 'Brand Communications & PR' },
+        { cn: '活动策划与执行', en: 'Event Marketing' },
+        { cn: '销售物料策划与制作（中英文）', en: 'Sales Enablement Materials' },
+        { cn: '市场调研与数据分析', en: 'Market Insights & Analytics' },
+        { cn: '视频栏目策划与制作统筹', en: 'Video Content Production' },
+      ],
+      tools: [
+        { abbr: 'Ps', name: 'Photoshop' },
+        { abbr: 'Ai', name: 'Illustrator' },
+        { abbr: 'Pr', name: 'Premiere' },
+        { abbr: 'PPT', name: 'PowerPoint' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

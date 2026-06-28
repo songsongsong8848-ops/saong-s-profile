@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @keyframes csRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes csBlink{50%{opacity:.2}}
+  @keyframes csScan{0%{background-position:0 0}100%{background-position:0 100%}}
+</style>
+</helmet>
+<div style="position:absolute;inset:0;overflow:auto;background:#efe9d8;display:flex;flex-direction:column;animation:pageFlipIn .7s cubic-bezier(.2,.7,.2,1);transform-origin:left center;background-image:repeating-linear-gradient(0deg,transparent 0,transparent 5px,rgba(44,39,48,.025) 5px,rgba(44,39,48,.025) 6px)">
+
+  <div style="border-bottom:3px double #2c2730;margin:clamp(20px,4vw,52px) clamp(20px,5vw,90px) 0;padding-bottom:14px;display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div style="font-family:'Special Elite',monospace;letter-spacing:.34em;font-size:clamp(13px,1.6vw,17px);color:#2c2730">ASONG&#39;s PROFILE</div>
+    <div style="font-family:'Special Elite',monospace;letter-spacing:.2em;font-size:11px;color:#6f6678">EST. 2020 &#183; SICHUAN</div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(30px,7vw,90px) 24px;gap:clamp(16px,2.4vw,30px)">
+    <div style="font-family:'Special Elite',monospace;letter-spacing:.32em;font-size:clamp(12px,1.5vw,16px);color:#7e56b4;animation:csRise .6s ease both">{{ vol }}</div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;animation:csRise .6s ease .06s both">
+      <div style="font-family:'Special Elite',monospace;letter-spacing:.16em;font-size:clamp(26px,6vw,72px);color:#2c2730;line-height:1.04">{{ en }}</div>
+      <div style="font-family:'Noto Serif SC',serif;font-weight:700;letter-spacing:.28em;font-size:clamp(16px,2.6vw,30px);color:#2c2730;text-indent:.28em">{{ zh }}</div>
+    </div>
+
+    <div style="width:min(420px,80%);height:1px;background:repeating-linear-gradient(90deg,#2c2730 0,#2c2730 8px,transparent 8px,transparent 15px);animation:csRise .6s ease .1s both"></div>
+
+    <div style="display:inline-flex;align-items:center;gap:12px;background:#2c2730;color:#efe9d8;font-family:'Special Elite',monospace;letter-spacing:.3em;font-size:clamp(13px,1.6vw,18px);padding:14px 28px;border-radius:2px;animation:csRise .6s ease .16s both">
+      <span style="width:9px;height:9px;border-radius:50%;background:#7e56b4;animation:csBlink 1.3s steps(1) infinite"></span>
+      COMING SOON
+    </div>
+
+    <div style="max-width:440px;font-family:'Noto Serif SC',serif;font-size:clamp(13px,1.5vw,16px);line-height:2;color:#6f6678;animation:csRise .6s ease .22s both">该栏目正在排版印刷中，敬请期待。<br>This column is currently at press &#8212; please check back soon.</div>
+  </div>
+
+  <dc-import name="BackHome" on-back="{{ onBack }}" hint-size="auto,auto"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;vol&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Vol.Ⅱ&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;en&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;INTERNSHIPS &amp; CAMPUS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;zh&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;实习 &amp; 校园经历&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onBack&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}"></script>
+</body>
+</html>

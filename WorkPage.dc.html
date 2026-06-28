@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="assets/image-slot.js"></script>
+<style>
+  .wk-row{display:grid;grid-template-columns:128px 1fr 218px;gap:clamp(14px,2vw,30px)}
+  .wk-btitle{font-weight:600;color:#2c2730;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#b9accb}
+  @media (max-width:820px){
+    .wk-row{grid-template-columns:92px 1fr !important}
+    .wk-img{grid-column:1 / -1 !important;justify-self:start !important;max-width:300px;margin-top:6px}
+  }
+  @media (max-width:520px){
+    .wk-row{grid-template-columns:1fr !important}
+    .wk-date{text-align:left !important}
+    .wk-spine{display:none !important}
+    .wk-content{border-left:none !important;padding-left:0 !important}
+  }
+</style>
+</helmet>
+
+<div style="background:#efe9d8;font-family:'Noto Serif SC',serif;color:#2c2730">
+
+  <div style="background:linear-gradient(180deg,#b3a3c4 0%,#a294b8 100%);padding:clamp(22px,4vw,46px) 0 clamp(20px,3vw,34px);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;width:38%;height:60%;background:#e9e0cf;border-radius:0 0 0 60px;opacity:.55"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px);position:relative">
+      <div style="font-size:clamp(20px,2.6vw,30px);font-weight:700;letter-spacing:.05em;color:#fff">Vol.&#8544;：职场履历</div>
+      <div style="margin-top:clamp(12px,2vw,22px);font-style:italic;font-size:clamp(14px,1.8vw,21px);color:#efe9d8;letter-spacing:.02em">以品牌内容、社媒运营、媒介投放与营销赋能，构建可持续的市场传播体系。</div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px) clamp(60px,8vw,110px)">
+
+    <div style="display:flex;justify-content:flex-end;margin-bottom:clamp(6px,1.5vw,14px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;color:#7e56b4;font-size:clamp(12px,1.4vw,15px);line-height:1.5;text-align:left">
+        <span style="font-size:16px;transform:translateY(-1px)">&#8593;</span>
+        <span>更多作品详情<br>请查看&lt;项目展示&gt;</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(30px,5vw,58px)">
+      <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="5">
+        <div class="wk-row">
+
+          <div class="wk-date" style="text-align:right;padding-top:2px">
+            <div style="font-family:'Special Elite',monospace;font-size:clamp(13px,1.5vw,16px);letter-spacing:.01em;color:#2c2730">{{ job.date }}</div>
+            <sc-if value="{{ job.note }}" hint-placeholder-val="">
+              <div style="margin-top:10px;font-size:clamp(11px,1.2vw,12.5px);line-height:1.7;color:#6f6678;text-align:left">{{ job.note }}</div>
+            </sc-if>
+          </div>
+
+          <div class="wk-spine wk-content" style="border-left:1.5px solid #c7bdd4;padding-left:clamp(16px,2vw,28px);position:relative">
+            <span style="position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#8d72b8;box-shadow:0 0 0 3px #efe9d8"></span>
+            <div style="font-size:clamp(15px,1.7vw,18px);font-weight:500">{{ job.company }}</div>
+            <div style="font-size:clamp(19px,2.4vw,27px);font-weight:700;letter-spacing:.16em;margin:4px 0 clamp(14px,2vw,20px)">{{ job.role }}</div>
+            <div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,16px)">
+              <sc-for list="{{ job.items }}" as="it" hint-placeholder-count="4">
+                <div style="font-size:clamp(13px,1.45vw,15.5px);line-height:1.95;color:#3b3640;text-align:justify">
+                  <span class="wk-btitle">{{ it.t }}</span>：{{ it.b }}
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div class="wk-img" style="align-self:start;display:flex;flex-direction:column;gap:3px">
+            <image-slot id="{{ job.imgId }}" src="{{ job.img }}" fit="{{ job.fit }}" style="width:100%;height:auto;aspect-ratio:{{ job.imgAr }};display:block;background:#efe9d8" shape="rounded" radius="3" placeholder="{{ job.imgHint }}"></image-slot>
+            <sc-if value="{{ job.imgId2 }}" hint-placeholder-val="">
+              <image-slot id="{{ job.imgId2 }}" src="{{ job.img2 }}" fit="contain" style="width:100%;height:auto;aspect-ratio:{{ job.imgAr2 }};display:block;background:#efe9d8" shape="rounded" radius="3" placeholder="{{ job.imgHint2 }}"></image-slot>
+            </sc-if>
+          </div>
+
+        </div>
+      </sc-for>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      jobs: [
+        {
+          date: '2025.04 - 至今', note: '', company: '博洛尼家居装饰（北京）有限公司', role: '营销策划',
+          imgId: 'wk-img-1', img: 'assets/img/slot-wk-img-1.webp', imgAr: '9/19', imgHint: '好空间 / 作品图', fit: 'contain',
+          items: [
+            { t: '中介渠道内容策划', b: '配合新设营销渠道，从 0 到 1 铺设我爱我家与麦田房产等中介渠道推广内容，建立标准化内容框架与定时转发机制，策划落地"家装词汇科普""新家交给专业的人"等多个系列内容，经纪人调动率提升 166%。' },
+            { t: '项目回访视频策划', b: '为增强渠道终端说服力，策划"一站交房回访记"系列视频节目，梳理视频脚本、协调视频拍摄、整理剪辑位置和视觉包装方向，渠道反应良好，成为固定更新销售工具。' },
+            { t: '中介渠道市场调研', b: '锚定渠道营销策略，以线上定量问卷、电话访谈等形式结合门店访谈，拟写调研报告并给出触客环节、推广内容、中介激励等多角度优化建议。' },
+            { t: '活动策划', b: '策划落地多场中介渠道京西客群爆破活动，制定活动配套宣传与邀约物料计划、统筹活动现场搭建策划与执行，建立小型外场活动 SOP。' },
+          ],
+        },
+        {
+          date: '2024.04 - 2024.09', note: '', company: '深圳联建光电有限公司', role: '市场推广专员',
+          imgId: 'wk-img-2', img: 'assets/img/slot-wk-img-2.webp', imgAr: '4/3', imgHint: 'News at a Glance / 刊物', fit: 'contain',
+          items: [
+            { t: '销售工具', b: '从 0 到 1 搭建销售刊物框架，完成内容规划、栏目建议和视觉风格策划，并完成单期内容编写与视觉排版，执行输出 5-8 月份包含设计源文件 / PDF / 线上链接 / PPT / 单页等在内的中英文销售工具包。' },
+            { t: '活动策划', b: '统筹"新展厅焕新点亮仪式暨 IP 形象发布会"活动。策划活动主题和主画面、规划活动流程 & 环节设置 & 人员分工、统筹活动物料、设计发布会 PPT。' },
+            { t: '社媒运营 / 内容设计 / 视频文案', b: '策划公司内部奥运活动并设计相关内容，提供社媒推广的策略支持和基本操作指导，策划公司年中会议视频内容，看哭两位公司高层。' },
+          ],
+        },
+        {
+          date: '2023.02 - 2024.04', note: '', company: '广州泽亨实业有限公司', role: '市场专员',
+          imgId: 'wk-img-3', img: 'assets/img/slot-wk-img-3.webp', imgAr: '9/19', imgHint: '泽亨 / 作品图', fit: 'contain',
+          items: [
+            { t: '解决方案资料', b: '针对公司新品，根据市场需求与行业热点包装新能源喷涂方案等产品资料。' },
+            { t: '案例包装', b: '为提升细分市场竞争力，进行王力安防门、东风商用车、东亚铝业等大型项目客户回访、资料整理及推广包装，面向行业客户分发，并作为品牌资产沉淀广泛用于后续行业客户沟通。' },
+            { t: '展会工作', b: '国际涂装大会等大型展会展出内容主题策划、PPT 制作、前宣、现场筹备和后宣，优化互动接触链。' },
+            { t: '雇主品牌建设', b: '为打造团队形象，进行新春等节日节点情感向采访视频脚本策划、协调多部门伙伴出镜并剪辑输出，策划五四青年节、世界地球日和员工福利等相关图片及视频内容。' },
+          ],
+        },
+        {
+          date: '2021.04 - 2022.05', note: '（2022.05-2023.02 在洲明科技 & 多翼智能工作，因为时间较短，具体工作内容没有写出，在时间轴说明。）', company: '深圳联建光电有限公司', role: '市场推广专员',
+          imgId: 'wk-img-4', img: 'assets/img/slot-wk-img-4.webp', imgAr: '16/9', imgHint: '红包封面-友商对比 / 作品图', fit: 'contain', imgId2: 'wk-img-4b', img2: 'assets/img/slot-wk-img-4b.webp', imgAr2: '16/9', imgHint2: '红包封面-自造热点 / 作品图',
+          items: [
+            { t: '销售工具', b: '梳理品牌及产品等多维竞争力，完成联建光电"中国质显"企业品牌册、"Vmini 系列"产品手册、"xR"方案手册等资料编写。' },
+            { t: '社媒运营', b: '为推动市场内容输出"品牌化"，进行技术包装、重大案例包装、热点新闻稿及政策解读、品质专题等文案，包装"五心品质""九维标准"的品质营销框架。' },
+            { t: '广告投放', b: '朋友圈信息流广告投放素材整理 & 优化、拟定投放关键词，单条素材最高曝光 180W+ 次。' },
+            { t: '节点策划', b: '策划裸眼 3D 创意红包封面在内的 2022 年新年节点推广（创意 / 进度把控 / 资源对接 / 内容包装及分发 / 复盘）。' },
+          ],
+        },
+        {
+          date: '2020.07 - 2021.03', note: '', company: '传唱广告公司', role: '文案企划',
+          imgId: 'wk-img-5', img: 'assets/img/slot-wk-img-5.webp', imgAr: '4/5', imgHint: '香城闻桂 / 作品图', fit: 'contain',
+          items: [
+            { t: '桂湖·正荣府项目', b: '为楼盘开售梳理宣传故事线，以"桂"文化串联两期楼盘推广，产出案名、二期开盘节点推广方案等线上内容 + 线下物料文案。' },
+            { t: '中交锦观项目', b: '新盘一期预热，通过生活方式系列稿件解读，使楼盘项目社媒单条阅读均量提高 400%。' },
+          ],
+        },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

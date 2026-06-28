@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="assets/image-slot.js"></script>
+<style>
+  .in-grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px)}
+  .in-tao{display:grid;grid-template-columns:300px 1fr;gap:clamp(20px,3vw,44px);align-items:stretch}
+  .in-tao .in-tao-right{display:flex;flex-direction:column;min-height:0}
+  .in-tao .in-comments{flex:1;min-height:0}
+  .in-pack{display:flex;justify-content:center;align-items:center;gap:clamp(12px,1.6vw,22px);flex-wrap:wrap}
+  .in-pack > image-slot{flex:0 1 clamp(190px,28vw,300px)}
+  @media (max-width:760px){
+    .in-grid12{grid-template-columns:repeat(3,1fr) !important}
+    .in-tao{grid-template-columns:1fr !important}
+    .in-tao .in-phone{max-width:280px;margin:0 auto}
+    .in-tao .in-comments{flex:none !important;aspect-ratio:16/11 !important}
+    .in-pack{max-width:360px;margin-left:auto !important;margin-right:auto !important}
+    .in-pack > image-slot{flex:0 1 100% !important}
+    .in-mango{flex-direction:column !important;align-items:flex-start !important}
+    .in-mango-left{flex:none !important;width:100% !important;justify-content:flex-start !important;gap:clamp(14px,3vw,20px) !important}
+    .in-mango-left > div:first-child{max-width:360px}
+    .in-poster{max-width:340px !important}
+  }
+</style>
+</helmet>
+
+<div style="background:#efe9d8;font-family:'Noto Serif SC',serif;color:#2c2730">
+
+  <!-- ===== Vol.II header ===== -->
+  <div style="background:linear-gradient(180deg,#b3a3c4 0%,#a294b8 100%);padding:clamp(22px,4vw,46px) 0 clamp(20px,3vw,34px);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;width:38%;height:60%;background:#e9e0cf;border-radius:0 0 0 60px;opacity:.55"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px);position:relative">
+      <div style="font-size:clamp(20px,2.6vw,30px);font-weight:700;letter-spacing:.05em;color:#fff">Vol.&#8545;：实习经历</div>
+      <div style="margin-top:clamp(12px,2vw,22px);font-style:italic;font-size:clamp(14px,1.8vw,21px);color:#efe9d8;letter-spacing:.02em">大学时没有刷简历的觉悟，只有一段传媒实习。</div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(18px,4vw,56px) 0">
+
+    <div style="font-family:'Special Elite',monospace;font-size:clamp(13px,1.5vw,16px);color:#2c2730;letter-spacing:.01em">2020.02 - 2020.06</div>
+    <div style="font-size:clamp(15px,1.7vw,18px);font-weight:500;margin-top:4px">平台运营中心实习生 · 芒果TV<span style="color:#6f6678;font-size:.86em">（不设转正）</span></div>
+
+    <!-- mango collage: poster + cards -->
+    <div class="in-mango" style="display:flex;gap:clamp(18px,3vw,46px);align-items:stretch;margin-top:clamp(18px,2.5vw,30px)">
+      <div class="in-mango-left" style="flex:0 0 clamp(280px,42vw,500px);display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:clamp(22px,3vw,34px)">
+        <div style="align-self:stretch;background:#fff;padding:10px;box-shadow:0 12px 30px rgba(40,33,52,.22);transform:rotate(-2deg)">
+          <image-slot id="in-mango-poster" src="assets/img/slot-in-mango-poster.webp" fit="contain" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:#fff" shape="rect" placeholder="芒果TV 剧集海报"></image-slot>
+        </div>
+        <image-slot id="in-mango-logo" src="assets/img/slot-in-mango-logo.webp" fit="contain" style="display:block;width:auto;height:34px;aspect-ratio:16/5;margin-left:6px;background:transparent" shape="rect" placeholder="芒果TV logo"></image-slot>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:clamp(16px,1.9vw,20px);font-weight:700;margin-bottom:8px">内容编辑实习生</div>
+        <div style="font-size:clamp(13px,1.45vw,15.5px);line-height:1.95;color:#3b3640;margin-bottom:clamp(18px,2.4vw,28px);text-align:justify">
+          <span style="color:#8d72b8;font-weight:700">&gt;</span> 图文板块的 UGC 内容运营：芒果TV（移动端）站内图文内容包装优化和上架、图文版块产品更新意见反馈、同类产品案例分享、内容投放效果日 / 周复盘，有效话题筛选。
+        </div>
+
+        <div style="font-size:clamp(16px,1.9vw,20px);font-weight:700;margin-bottom:8px">电视剧运营实习生</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:clamp(13px,1.45vw,15.5px);line-height:1.9;color:#3b3640">
+          <div><span style="color:#8d72b8;font-weight:700">&gt;</span> 平台待引进项目评估。</div>
+          <div><span style="color:#8d72b8;font-weight:700">&gt;</span> 艺人宣传小视频 / 宣传 push 等在播影视项目的宣传物料的制作。</div>
+          <div><span style="color:#8d72b8;font-weight:700">&gt;</span> 会员衍生内容"绿色过浓 100% 甜度版"策划及剪辑，累计播放 <span style="color:#7e56b4;font-weight:700;font-family:'Special Elite',monospace">800W+</span> 次。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Vol.III header ===== -->
+  <div data-campus-anchor="1" style="background:linear-gradient(180deg,#b3a3c4 0%,#a294b8 100%);padding:clamp(22px,4vw,46px) 0 clamp(20px,3vw,34px);position:relative;overflow:hidden;margin-top:clamp(40px,6vw,80px)">
+    <div style="position:absolute;top:0;right:0;width:38%;height:60%;background:#e9e0cf;border-radius:0 0 0 60px;opacity:.55"></div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px);position:relative">
+      <div style="font-size:clamp(20px,2.6vw,30px);font-weight:700;letter-spacing:.05em;color:#fff">Vol.&#8546;：校园经验</div>
+      <div style="margin-top:clamp(12px,2vw,22px);font-style:italic;font-size:clamp(14px,1.8vw,21px);color:#efe9d8;letter-spacing:.02em">因为喜欢传播，所以加入了大学的校媒组织服务，策划制作内容 20+，多条阅读破万。</div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(18px,4vw,56px) clamp(60px,8vw,110px)">
+
+    <!-- 食堂网媒 12-photo grid -->
+    <div class="in-grid12">
+      <sc-for list="{{ canteen }}" as="c" hint-placeholder-count="12">
+        <image-slot id="{{ c.id }}" src="{{ c.src }}" fit="cover" style="display:block;width:100%;height:auto;aspect-ratio:4/3;background:#efe9d8" shape="rounded" radius="2" placeholder="校媒照片"></image-slot>
+      </sc-for>
+    </div>
+
+    <!-- 淘宝寄语 -->
+    <div class="in-tao" style="margin-top:clamp(38px,5vw,68px)">
+      <div class="in-phone" style="width:100%">
+        <image-slot id="in-tao-phone" src="assets/img/tao-phone.png" fit="contain" style="display:block;width:100%;height:auto;aspect-ratio:9/18" shape="rounded" radius="6" placeholder="推文截图"></image-slot>
+      </div>
+      <div class="in-tao-right">
+        <div style="font-size:clamp(14px,1.6vw,18px);line-height:2;color:#2c2730;text-align:justify;margin-bottom:clamp(16px,2.4vw,26px)">
+          2024 年毕业季，淘宝的"股带寄语"策划，让我想起自己在 2018 年做的一条毕业季内容——请构成大学"生活"的后勤工作人员们，为毕业生送出他们的寄语，引起了许多校友的共鸣。
+        </div>
+        <div class="in-comments" style="display:flex;min-height:0">
+          <image-slot id="in-tao-comments" src="assets/img/tao-comments.png" fit="contain" style="display:block;width:100%;height:100%;min-height:0;background:#efe9d8" shape="rounded" radius="3" placeholder="校友评论截图"></image-slot>
+        </div>
+      </div>
+    </div>
+
+    <!-- 军训创意 -->
+    <div style="margin-top:clamp(38px,5vw,68px);text-align:center">
+      <div style="font-size:clamp(15px,1.8vw,20px);font-weight:600;margin-bottom:clamp(14px,2vw,22px)">军训创意策划登上中青网首页</div>
+      <image-slot id="in-army" src="assets/img/army.png" fit="contain" style="display:block;width:min(680px,100%);margin:0 auto;height:auto;aspect-ratio:4/3" shape="rounded" radius="3" placeholder="中青网报道截图"></image-slot>
+    </div>
+
+    <!-- 包装设计 -->
+    <div style="margin-top:clamp(38px,5vw,68px)">
+      <div style="font-size:clamp(15px,1.8vw,20px);font-weight:600;margin-bottom:clamp(14px,2vw,22px);text-align:center">包装设计 / 平面广告 / 广告策划作品</div>
+      <div class="in-pack">
+        <image-slot id="in-pack-1" src="assets/img/pack-1.png" class="in-poster" style="display:block;width:100%;height:auto;aspect-ratio:3/4" shape="rounded" radius="3" placeholder="包装设计"></image-slot>
+        <image-slot id="in-pack-2" src="assets/img/pack-2.png" class="in-poster" style="display:block;width:100%;height:auto;aspect-ratio:3/4" shape="rounded" radius="3" placeholder="平面广告"></image-slot>
+        <image-slot id="in-pack-3" src="assets/img/pack-3.png" class="in-poster" style="display:block;width:100%;height:auto;aspect-ratio:3/4" shape="rounded" radius="3" placeholder="平面广告"></image-slot>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      canteen: [1,2,3,4,5,6,7,8,9,10,11,12].map((n) => ({
+        id: 'in-canteen-' + n,
+        src: 'assets/img/canteen-' + n + (n === 1 ? '.png' : '.jpeg'),
+      })),
+      taoCommentIds: Array.from({ length: 4 }, (_, i) => 'in-tao-comment-' + (i + 1)),
+    };
+  }
+}
+</script>
+</body>
+</html>
